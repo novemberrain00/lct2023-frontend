@@ -1,7 +1,7 @@
 {
   "name": "invests-client",
   "version": "0.1.0",
-  "homepage": "https://novemberrain00.github.io/lct2023-frontend",
+  "homepage": "./",
   "deploy": "gh-pages -d build",
   "private": true,
   "dependencies": {
