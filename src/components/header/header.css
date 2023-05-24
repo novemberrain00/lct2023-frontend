@@ -1,0 +1,10 @@
+.header {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding: 5px 20px;
+}
+
+.header__btn {
+    margin-left: 78px;
+}

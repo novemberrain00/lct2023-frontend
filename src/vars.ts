@@ -1,0 +1,1 @@
+export const devDomain = 'https://194.58.98.232';
