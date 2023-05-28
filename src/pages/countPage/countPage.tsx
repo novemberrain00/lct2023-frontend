@@ -184,11 +184,13 @@ const CountPage: FC = () => {
             await fetch(`${devDomain}/industries/get-report`)
             .then(res => res.blob())
             .then((res) => {
-                const pdfBlob = new Blob([res], { type: 'application/pdf' });
+                const pdfBlob = new Blob([res], {type: 'application/pdf'});
         
                 saveAs(pdfBlob, 'отчёт.pdf');
-              });
-        });
+              })
+            .catch(err => console.log(err));
+        })
+        .catch(err => console.log(err));;
         
     }
 

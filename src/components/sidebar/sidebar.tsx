@@ -273,7 +273,7 @@ const Sidebar: FC<SidebarPropsI> = (props) => {
                         id="employees"
                         required
                     />
-                    <span className="input__label-text">Траты на сотрудников</span>
+                    <span className="input__label-text">Траты на сотрудников (в месяц)</span>
                 </label>
                 <label htmlFor="rent" className="input__label sidebar__input">
                     <input
@@ -283,7 +283,7 @@ const Sidebar: FC<SidebarPropsI> = (props) => {
                         id="rent"
                         required
                     />
-                    <span className="input__label-text">Траты на недвижимлсть</span>
+                    <span className="input__label-text">Траты на недвижимость (в месяц)</span>
                 </label>
                 <div className="select-wrapper sidebar__input">
                     <span className="select__label">Использование оборудования</span>
