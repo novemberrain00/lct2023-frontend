@@ -1,13 +1,14 @@
 import {FC, useState, useEffect} from 'react';
 import {Link} from 'react-router-dom';
-import {useSelector} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import type {RootState} from '../../store';
 import {devDomain} from '../../vars';
 
 import './header.css';
+import { setToken } from '../../redux/authTokenSlice';
 
 interface UserI {
-    id: number,
+    id: number | null,
     name: string,
     surname: string,
     fathername: string,
@@ -22,7 +23,9 @@ interface UserI {
 
 const Header: FC = () => {
     const [userData, setUserData] = useState<UserI>();
+    const [isIserLoggedIn, setIsUserLoggedIn] = useState(false);
 
+    const dispatch = useDispatch();
     const token = useSelector((state: RootState) => state.authTokenReducer.token);
     if(token) sessionStorage.setItem('token', token);
 
@@ -31,12 +34,31 @@ const Header: FC = () => {
             await fetch(`${devDomain}/auth/user?token=${token || sessionStorage.getItem('token')}`)
             .then(res => res.json())
             .then(res => {
+                setIsUserLoggedIn(true);
                 setUserData(res[0])
             });
         }
     }
 
-    console.log(userData)
+    const logout = () => {
+        setIsUserLoggedIn(false);
+        dispatch(setToken(''));
+        setUserData({
+            id: null,
+            name: '',
+            surname: '',
+            fathername: '',
+            company_name: '',
+            inn: '',
+            website: '',
+            industry: '',
+            city: '',
+            job: '',
+            country: '',
+        });
+
+        sessionStorage.removeItem('token');
+    }
 
     useEffect(() =>{
         getUserData();
@@ -45,17 +67,12 @@ const Header: FC = () => {
     return (
         <>
             <header className="header">
-                {userData?.name}
-                <input
-                    type="text" 
-                    className="input" 
-                    placeholder="Поиск"
-                    id="employees"
-                    required
-                />
-                <Link to="/login">
-                    <button className="btn header__btn">Вход</button>
-                </Link>
+                <span className="header__username">{userData?.name}</span>
+                {
+                    isIserLoggedIn ?
+                    <button onClick={() => logout()} className="btn header__btn">Выход</button>
+                    :<Link to="/login"><button className="btn header__btn">Вход</button></Link> 
+                }
             </header>
         </>
     );

@@ -1,7 +1,7 @@
 {
   "name": "invests-client",
   "version": "0.1.0",
-  "homepage": "./",
+  "homepage": "https://novemberrain00.github.io/lct2023-frontend/",
   "deploy": "gh-pages -d build",
   "private": true,
   "dependencies": {
@@ -14,6 +14,7 @@
     "@types/node": "^16.18.31",
     "@types/react": "^18.2.6",
     "@types/react-dom": "^18.2.4",
+    "file-saver": "^2.0.5",
     "materialize-css": "^1.0.0-rc.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -49,6 +50,7 @@
     ]
   },
   "devDependencies": {
+    "@types/file-saver": "^2.0.5",
     "@yandex/ymaps3-types": "^0.0.5",
     "gh-pages": "^5.0.0"
   }

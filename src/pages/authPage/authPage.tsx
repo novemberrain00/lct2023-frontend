@@ -2,7 +2,7 @@ import {FC, useState, FormEvent} from 'react';
 import {Link, useNavigate} from 'react-router-dom';
 import {setToken} from '../../redux/authTokenSlice';
 import {useDispatch} from 'react-redux';
-import { devDomain } from '../../vars';
+import {devDomain} from '../../vars';
 
 import './authPage.css'
 
@@ -44,7 +44,17 @@ const AuthPage: FC = () => {
     };
 
     return (
-        <>
+        <div className="container">
+            <div className="back-link-wrapper back-link_margined">
+                <Link to="/">
+                    <span className="back-link">
+                        <svg width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7.5 13L1.5 7L7.5 1" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                        Назад
+                    </span>
+                </Link>
+            </div>
             <form action="post" className="form" id="auth-form" onSubmit={(e: FormEvent) => authHandler(e)}>
                 <h1 className="title form__title">Вход</h1>
                 <label htmlFor="inn" className="input__label">
@@ -82,7 +92,7 @@ const AuthPage: FC = () => {
                     </Link>
                 </span>
             </form>
-        </>
+        </div>
     )
 }; 
 
