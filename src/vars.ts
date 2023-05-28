@@ -1,1 +1,0 @@
-export const devDomain = 'http://194.58.98.232:443';
