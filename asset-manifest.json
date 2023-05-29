@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/lct2023-frontend/static/css/main.a5468156.css",
-    "main.js": "/lct2023-frontend/static/js/main.8f7c5a46.js",
+    "main.js": "/lct2023-frontend/static/js/main.2aa06b85.js",
     "static/media/calc-icon.svg": "/lct2023-frontend/static/media/calc-icon.f95b61f78854a3af3efae920e80f3357.svg",
     "index.html": "/lct2023-frontend/index.html",
     "main.a5468156.css.map": "/lct2023-frontend/static/css/main.a5468156.css.map",
-    "main.8f7c5a46.js.map": "/lct2023-frontend/static/js/main.8f7c5a46.js.map"
+    "main.2aa06b85.js.map": "/lct2023-frontend/static/js/main.2aa06b85.js.map"
   },
   "entrypoints": [
     "static/css/main.a5468156.css",
-    "static/js/main.8f7c5a46.js"
+    "static/js/main.2aa06b85.js"
   ]
 }
